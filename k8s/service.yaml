@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: home-graph-ql
+  labels:
+    app: home-graph-ql
+spec:
+  ports:
+  - name: home-graph-ql-svc
+    nodePort: 30201
+    port: 5000
+    protocol: TCP
+    targetPort: 5000
+  selector:
+    run: home-graph-ql
+  type: LoadBalancer

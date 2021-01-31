@@ -1,0 +1,30 @@
+piVersion: apps/v1
+kind: Deployment
+metadata:
+  name: home-graph-ql
+  labels:
+    app: home-graph-ql
+spec:
+  selector:
+    matchLabels:
+      run: home-graph-ql
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: home-graph-ql
+    spec:
+      containers:
+        - name: home-graph-ql
+          image: "graphile/postgraphile:v4.10.0"
+          command: ["sh"]
+          args:
+            - "-c"
+            - './cli.js --connection "postgres://$POSTGRES_USER:$POSTGRES_PASSWORD@$POSTGRES_HOST:$POSTGRES_PORT/$POSTGRES_DATABASE" --schema "$POSTGRES_SCHEMA" --jwt-token-identifier public.jwt_token --jwt-secret "$JWT_SECRET" --default-role "home_graph_ql_authenticater"'
+          envFrom:
+            - configMapRef:
+                name: home-graph-ql-config
+          imagePullPolicy: IfNotPresent
+          ports:
+          - containerPort: 5000
+            name: backend

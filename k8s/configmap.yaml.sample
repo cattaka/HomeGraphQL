@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: home-graph-ql-config
+data:
+  POSTGRES_USER: "home_graph_ql"
+  POSTGRES_PASSWORD: "charlieandsei"
+  POSTGRES_HOST: "<< PUT HERE >>"
+  POSTGRES_PORT: "5432"
+  POSTGRES_DATABASE: "<< PUT HERE >>"
+  POSTGRES_SCHEMA: "<< PUT HERE >>"
+  JWT_SECRET: "<< PUT HERE >>"
+  DEFAULT_ROLE: "home_graph_ql_authenticater"
