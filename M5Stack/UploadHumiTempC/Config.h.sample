@@ -1,0 +1,9 @@
+#define SENSOR_NAME "WorkRoom"
+// #define SENSOR_NAME "BedRoom"
+// #define SENSOR_NAME "Living"
+
+#define SSID "<<PUT HERE>>"
+#define PASSWORD "<<PUT HERE>>"
+
+#define GRAPHQL_ENDPOINT "http://<<PUT HERE>>/graphql"
+#define GRAPHQL_ACCESS_TOKEN "Bearer <<PUT HERE>>"

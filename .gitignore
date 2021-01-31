@@ -1,2 +1,3 @@
 .env
 k8s/configmap.yaml
+M5Stack/UploadHumiTempC/Config.h

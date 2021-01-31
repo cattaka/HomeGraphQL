@@ -71,6 +71,9 @@ grant select
 grant select, insert, update, delete
   on public.temp_humi_values
   to home_graph_ql_write;
+grant select, update
+  on sequence public.temp_humi_values_id_seq
+  to home_graph_ql_write;
 grant home_graph_ql_authenticater to home_graph_ql;
 grant home_graph_ql_read to home_graph_ql;
 grant home_graph_ql_write to home_graph_ql;
