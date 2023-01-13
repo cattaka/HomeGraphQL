@@ -1,4 +1,5 @@
 #include <M5StickC.h>
+//#include <M5StickCPlus.h>
 #include "DHT12.h"
 #include <Wire.h>
 #include "Adafruit_Sensor.h"
@@ -214,5 +215,7 @@ void loop() {
         http.end();
       }
     }
+  } else {
+    esp_restart();
   }
 }
